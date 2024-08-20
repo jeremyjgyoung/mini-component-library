@@ -17,6 +17,8 @@ const SIZES = {
   large: {
     "--height": "16px",
     "--padding": "4px",
+    "--border-radius": "8px",
+    "--box-shadow": `inset 0px 2px 4px ${COLORS.transparentGray35}`,
   },
 };
 
@@ -24,24 +26,16 @@ const ProgressBar = ({ value, size }) => {
   const styles = SIZES[size];
 
   return (
-    <Wrapper style={styles}>
-      <ProgressBarBase style={styles} value={value} max={100}>
-        {value}
-      </ProgressBarBase>
-    </Wrapper>
+    <ProgressBarBase style={styles} value={value} max={100}>
+      {value}
+    </ProgressBarBase>
   );
 };
 
-const Wrapper = styled.div`
-  width: 370px;
-  padding: var(--padding);
-  background-color: ${COLORS.transparentGray15};
-  border-radius: 4px;
-`;
-
 const ProgressBarBase = styled.progress`
-  width: 100%;
+  width: 370px;
   height: var(--height);
+  box-shadow: var(--box-shadow);
 `;
 
 export default ProgressBar;
