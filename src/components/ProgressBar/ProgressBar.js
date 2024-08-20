@@ -9,18 +9,15 @@ const SIZES = {
   small: {
     "--height": "8px",
     "--padding": "0px",
-    "--box-shadow": "none",
   },
   medium: {
     "--height": "12px",
     "--padding": "0px",
-    "--box-shadow": "none",
   },
   large: {
     "--height": "16px",
     "--padding": "4px",
     "--border-radius": "8px",
-    "--box-shadow": `inset 0px 2px 4px ${COLORS.transparentGray35}`,
   },
 };
 
@@ -37,7 +34,7 @@ const ProgressBar = ({ value, size }) => {
 const ProgressBarBase = styled.progress`
   width: 370px;
   height: var(--height);
-  box-shadow: var(--box-shadow);
+  box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   border-radius: 8px;
 
   /* Remove the default appearance in WebKit-based browsers */
