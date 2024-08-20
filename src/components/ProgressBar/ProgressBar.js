@@ -27,9 +27,12 @@ const ProgressBar = ({ value, size }) => {
   const styles = SIZES[size];
 
   return (
-    <ProgressBarBase style={styles} value={value} max={100}>
-      {value}
-    </ProgressBarBase>
+    <>
+      <ProgressBarBase style={styles} value={value} max={100}>
+        {value}
+      </ProgressBarBase>
+      <VisuallyHidden>{value}%</VisuallyHidden>
+    </>
   );
 };
 
