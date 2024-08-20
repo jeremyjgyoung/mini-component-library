@@ -56,13 +56,19 @@ const ProgressBarBase = styled.progress`
   &::-webkit-progress-value {
     /* Style the filled portion of the progress bar in WebKit-based browsers */
     background-color: ${COLORS.primary};
-    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    /* The calculation sets the border radius in a linear fashion to 0 to 4 px from values 98 to 100 */
+    border-radius: var(--border-radius)
+      calc((${(props) => props.value} - 98) * 2px)
+      calc((${(props) => props.value} - 98) * 2px) var(--border-radius);
   }
 
   &::-moz-progress-bar {
     /* Style the filled portion of the progress bar in Firefox */
     background-color: ${COLORS.primary};
-    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+    /* The calculation sets the border radius in a linear fashion to 0 to 4 px from values 98 to 100 */
+    border-radius: var(--border-radius)
+      calc((${(props) => props.value} - 98) * 2px)
+      calc((${(props) => props.value} - 98) * 2px) var(--border-radius);
   }
 `;
 
