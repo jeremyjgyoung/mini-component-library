@@ -9,15 +9,17 @@ const SIZES = {
   small: {
     "--height": "8px",
     "--padding": "0px",
+    "--border-radius": "4px",
   },
   medium: {
     "--height": "12px",
     "--padding": "0px",
+    "--border-radius": "4px",
   },
   large: {
     "--height": "16px",
     "--padding": "4px",
-    "--border-radius": "8px",
+    "--border-radius": "4px",
   },
 };
 
@@ -35,7 +37,7 @@ const ProgressBarBase = styled.progress`
   width: 370px;
   height: var(--height);
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 
   /* Remove the default appearance in WebKit-based browsers */
   -webkit-appearance: none;
@@ -47,19 +49,20 @@ const ProgressBarBase = styled.progress`
   &::-webkit-progress-bar {
     /* Style the progress bar container in WebKit-based browsers */
     background-color: ${COLORS.transparentGray35};
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     padding: var(--padding);
   }
 
   &::-webkit-progress-value {
     /* Style the filled portion of the progress bar in WebKit-based browsers */
     background-color: ${COLORS.primary};
-    border-radius: 8px 0px 0px 8px;
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
   }
 
   &::-moz-progress-bar {
     /* Style the filled portion of the progress bar in Firefox */
     background-color: ${COLORS.primary};
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
   }
 `;
 
