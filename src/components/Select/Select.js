@@ -40,6 +40,7 @@ const SelectDropdown = styled.select`
 `;
 
 const DisplayWrapper = styled.div`
+  color: ${COLORS.gray700};
   background-color: ${COLORS.transparentGray15};
   height: 43px;
   border-radius: 8px;
