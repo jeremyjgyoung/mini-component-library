@@ -7,8 +7,14 @@ import Icon from "../Icon";
 import VisuallyHidden from "../VisuallyHidden";
 
 const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
-  return <Input placeholder={placeholder}></Input>;
+  return (
+    <InputWrapper>
+      <Input placeholder={placeholder}></Input>
+    </InputWrapper>
+  );
 };
+
+const InputWrapper = styled.div``;
 
 const Input = styled.input``;
 
