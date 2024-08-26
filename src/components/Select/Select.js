@@ -10,15 +10,15 @@ const Select = ({ label, value, onChange, children }) => {
 
   return (
     <SelectWrapper>
+      <SelectDropdown value={value} onChange={onChange}>
+        {children}
+      </SelectDropdown>
       <DisplayWrapper>
         {displayedValue}
         <IconWrapper>
           <Icon id="chevron-down" />
         </IconWrapper>
       </DisplayWrapper>
-      <SelectDropdown value={value} onChange={onChange}>
-        {children}
-      </SelectDropdown>
     </SelectWrapper>
   );
 };
@@ -47,6 +47,14 @@ const DisplayWrapper = styled.div`
   display: flex;
   margin-right: auto;
   padding: 12px 16px 0 16px;
+
+  ${SelectDropdown}:focus + & {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  ${SelectDropdown}:hover + & {
+    color: ${COLORS.black};
+  }
 `;
 
 const IconWrapper = styled.div`
