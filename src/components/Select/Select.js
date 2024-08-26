@@ -59,6 +59,7 @@ const DisplayWrapper = styled.div`
 
 const IconWrapper = styled.div`
   padding-left: 20px;
+  pointer-events: none;
 `;
 
 export default Select;
