@@ -9,6 +9,7 @@ import VisuallyHidden from "../VisuallyHidden";
 const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   return (
     <InputWrapper>
+      <Icon id={icon}></Icon>
       <Input placeholder={placeholder}></Input>
     </InputWrapper>
   );
