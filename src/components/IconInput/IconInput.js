@@ -11,6 +11,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     <InputWrapper>
       <IconComponent id={icon}></IconComponent>
       <Input placeholder={placeholder}></Input>
+      <VisuallyHidden>{label}</VisuallyHidden>
     </InputWrapper>
   );
 };
